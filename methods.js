@@ -257,11 +257,12 @@ function getUsersCompany(array, id) {
 // Функция возвращает новый массив с измененным номером для указанного пользователя. 
 
 function changePhone(array, id, phone) {
-  const newNumber = array.find(item => {
-  item.id === id
-   return item.phone = phone
-  })
-  return newNumber
-}
+  const newNumber = array.map(item => {
+    if (item.id === id) 
+       item.phone = phone
+     return item
+    })
+    return newNumber
+  }
 
 console.log(changePhone(users, 1, 898999494))
